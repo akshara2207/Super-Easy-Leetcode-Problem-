@@ -1,0 +1,7 @@
+class Solution:
+    def aliceWins(self, nums: List[int]) -> bool:
+        sum_single = sum(x for x in nums if 1 <= x <= 9)
+        sum_double = sum(x for x in nums if 10 <= x <= 99)
+        total = sum(nums)
+         
+        return (sum_single > total - sum_single) or (sum_double > total - sum_double)
