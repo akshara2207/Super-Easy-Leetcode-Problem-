@@ -1,0 +1,11 @@
+class Solution:
+    def reverseOnlyLetters(self, s: str) -> str:
+        stack = [c for c in s if c.isalpha()]  # all letters in a stack
+        ans = ""
+        
+        for c in s:
+            if c.isalpha():
+                ans += stack.pop()  # take from the end
+            else:
+                ans += c  # keep non-letters
+        return ans
